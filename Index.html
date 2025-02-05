@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscripción Pre Residencias</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+            background-color: #f4f4f9;
+        }
+        select {
+            margin-top: 10px;
+            padding: 8px;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Inscripción Presencial</h1>
+    <label for="regionSelect">Seleccione su región sanitaria:</label>
+    <select id="regionSelect" onchange="mostrarInfo()">
+        <option value="">Seleccione...</option>
+        <option value="1">Región Sanitaria I</option>
+        <option value="2">Región Sanitaria II</option>
+        <option value="3">Región Sanitaria III</option>
+    </select>
+
+    <div id="info" class="hidden">
+        <h2 id="direccion"></h2>
+        <p>Debe llevar los siguientes documentos:</p>
+        <ul>
+            <li>Formulario de inscripción</li>
+            <li>Copia del DNI</li>
+            <li>Título profesional</li>
+        </ul>
+    </div>
+
+    <script>
+        const direcciones = {
+            "1": "Av. Colón 1234, Bahía Blanca",
+            "2": "Calle 56 789, Tandil",
+            "3": "Av. San Martín 456, Junín"
+        };
+
+        function mostrarInfo() {
+            const region = document.getElementById("regionSelect").value;
+            const infoDiv = document.getElementById("info");
+            const direccion = document.getElementById("direccion");
+
+            if (region) {
+                direccion.innerText = "Dirección: " + direcciones[region];
+                infoDiv.classList.remove("hidden");
+            } else {
+                infoDiv.classList.add("hidden");
+            }
+        }
+    </script>
+</body>
+</html>
