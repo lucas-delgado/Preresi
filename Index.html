@@ -4,166 +4,55 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guía de Inscripción Presencial</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f9f9f9;
-        }
-        header {
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px;
-            text-align: center;
-        }
-        .container {
-            padding: 20px;
-        }
-        select {
-            margin: 10px 0;
-            padding: 10px;
-            font-size: 16px;
-        }
-        .region-info {
-            margin-top: 20px;
-            padding: 10px;
-            background-color: #e2e2e2;
-            border-radius: 5px;
-        }
-        .document-list {
-            margin-top: 20px;
-        }
-        .document-item {
-            margin-bottom: 10px;
-        }
-        .document-item a {
-            color: #4CAF50;
-            text-decoration: none;
-        }
-        .document-item a:hover {
-            text-decoration: underline;
-        }
-        .document-image {
-            display: none;
-            max-width: 100%;
-            margin-top: 10px;
-        }
-        .extra-info {
-            background-color: #fff3cd;
-            border: 1px solid #ffeeba;
-            padding: 10px;
-            margin-top: 20px;
-            border-radius: 5px;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <h1>Guía de Inscripción Presencial (3/2 - 14/2)</h1>
 
-    <header>
-        <h1>Guía de Inscripción Presencial (3/2 - 14/2)</h1>
-    </header>
+    <label for="region">Selecciona tu Región Sanitaria:</label>
+    <select id="region" onchange="mostrarDireccion()">
+        <option value="">-- Selecciona --</option>
+        <option value="1">Región 1 - Bahía Blanca</option>
+        <option value="2">Región 2 - Pehuajó</option>
+        <option value="3">Región 3 - Junín</option>
+        <option value="4">Región 4 - Pergamino</option>
+        <option value="5">Región 5 - San Isidro</option>
+        <option value="6">Región 6 - Lomas de Zamora</option>
+        <option value="7">Región 7 - Ituzaingó</option>
+        <option value="8">Región 8 - Mar del Plata</option>
+        <option value="9">Región 9 - Azul</option>
+        <option value="10">Región 10 - Chivilcoy</option>
+        <option value="11">Región 11 - Ensenada</option>
+        <option value="12">Región 12 - Isidro Casanova</option>
+    </select>
 
-    <div class="container">
-        <label for="region-select">Seleccione la Región Sanitaria:</label>
-        <select id="region-select">
-            <option value="1">Región Sanitaria 1 - Bahía Blanca</option>
-            <option value="2">Región Sanitaria 2 - Pehuajó</option>
-            <option value="3">Región Sanitaria 3 - Junín</option>
-            <option value="4">Región Sanitaria 4 - Pergamino</option>
-            <option value="5">Región Sanitaria 5 - San Isidro</option>
-            <option value="6">Región Sanitaria 6 - Lomas de Zamora</option>
-            <option value="7">Región Sanitaria 7 - Ituzaingó</option>
-            <option value="8">Región Sanitaria 8 - Mar del Plata</option>
-            <option value="9">Región Sanitaria 9 - Azul</option>
-            <option value="10">Región Sanitaria 10 - Chivilcoy</option>
-            <option value="11">Región Sanitaria 11 - Ensenada</option>
-            <option value="12">Región Sanitaria 12 - Isidro Casanova</option>
-        </select>
+    <p id="direccion" class="hidden"><strong>Dirección:</strong> <span id="direccion-texto"></span></p>
 
-        <div id="region-info" class="region-info">
-            <!-- Aquí se mostrará la dirección y horario de la región elegida -->
-        </div>
+    <h2>Documentación Requerida</h2>
+    <ul>
+        <li>Constancia de preinscripción online <button class="toggle-btn" onclick="toggleInfo('preinscripcion')">+</button>
+            <p id="preinscripcion" class="hidden">Una vez completada la encuesta online, te tuvo que llegar un mail con el formulario completo. Hay que imprimir eso.</p>
+        </li>
+        <li>Declaración Jurada Becarios <button class="toggle-btn" onclick="toggleInfo('becarios')">+</button>
+            <p id="becarios" class="hidden">Título: Médico/a. Expedido por: UBA/UNLP/UNLAM. Matrícula N°: En trámite o ET. Descripción de tareas: Programa de formación Pre residencia...</p>
+        </li>
+        <li>Constancia de CUIL <button class="toggle-btn" onclick="toggleInfo('cuil')">+</button>
+            <p id="cuil" class="hidden">Lo pedís desde ANSES. <a href="https://www.argentina.gob.ar/servicio/solicitar-constancia-de-cuil" target="_blank">Solicitar Constancia de CUIL</a>.</p>
+        </li>
+        <li>Formulario de apertura de cuenta bancaria <button class="toggle-btn" onclick="toggleInfo('banco')">+</button>
+            <p id="banco" class="hidden">Dependencia: Ministerio de Salud de la Provincia de Buenos Aires. Busca tu sucursal <a href="https://www.bancoprovincia.com.ar/BuscadorSucursales" target="_blank">aquí</a>.</p>
+        </li>
+        <li>Currículum Vitae <button class="toggle-btn" onclick="toggleInfo('cv')">+</button>
+            <p id="cv" class="hidden">Pueden buscar plantillas en Canva. Sí o sí tienen que estar los datos que se especifican.</p>
+        </li>
+        <li>Certificado de libre deuda alimentaria <button class="toggle-btn" onclick="toggleInfo('deuda')">+</button>
+            <p id="deuda" class="hidden">Lo pedís desde <a href="https://www.gba.gob.ar/justicia_y_ddhh/deudores_alimentarios" target="_blank">aquí</a>.</p>
+        </li>
+        <li>Declaración jurada de procesos judiciales <button class="toggle-btn" onclick="toggleInfo('judiciales')">+</button>
+            <p id="judiciales" class="hidden">En la ciudad de... partido de... agregan la sede que fueron. Fecha: la de entrega.</p>
+        </li>
+    </ul>
 
-        <div class="document-list">
-            <h2>Documentos Requeridos</h2>
-            <ul>
-                <li class="document-item">
-                    <span>1. Constancia de preinscripción online.</span>
-                </li>
-                <li class="document-item">
-                    <span>2. Declaración Jurada Becarios/as.</span>
-                </li>
-                <li class="document-item">
-                    <span>3. Fotocopia del Documento de Identidad (L.E., L.C. o D.N.I.).</span>
-                </li>
-                <li class="document-item">
-                    <span>4. Fotocopia del título profesional habilitante o certificado de título en trámite.</span>
-                </li>
-                <li class="document-item">
-                    <span>5. Certificado de ética profesional (original) en caso de poseer matrícula.</span>
-                </li>
-                <li class="document-item">
-                    <span>6. Constancia de CUIL/CUIT.</span>
-                </li>
-                <li class="document-item">
-                    <span>7. Currículum Vitae con: domicilio real, código postal, teléfono, mail, estudios y antecedentes. 
-                        <a href="#" onclick="showImage('cv-instructions')">Ver instrucciones</a>
-                        <img id="cv-instructions" class="document-image" src="cv_instructions.png" alt="Instrucciones para Currículum Vitae">
-                    </span>
-                </li>
-                <li class="document-item">
-                    <span>8. Formulario de apertura de cuenta bancaria.
-                        <a href="#" onclick="showImage('account-form')">Ver instrucciones</a>
-                        <img id="account-form" class="document-image" src="account_form.png" alt="Instrucciones para Formulario de Apertura de Cuenta">
-                    </span>
-                </li>
-                <li class="document-item">
-                    <span>9. Declaración Jurada respecto de la existencia de procesos judiciales civiles o penales pendientes.
-                        <a href="#" onclick="showImage('legal-declaration')">Ver instrucciones</a>
-                        <img id="legal-declaration" class="document-image" src="legal_declaration.png" alt="Instrucciones para Declaración Judicial">
-                    </span>
-                </li>
-                <li class="document-item">
-                    <span>10. Certificado vigente del Registro de Deudores Alimentarios Morosos de la Provincia de Buenos Aires.</span>
-                </li>
-            </ul>
-        </div>
-
-        <!-- Información extra -->
-        <div class="extra-info">
-            <h3>Indicaciones Adicionales:</h3>
-            <p><strong>Escaneo de Documentos:</strong> Para convertir tus documentos en formato PDF, puedes descargar una aplicación de escaneo como <a href="https://play.google.com/store/apps/details?id=com.intsig.camscanner" target="_blank">CamScanner</a> o <a href="https://apps.apple.com/us/app/camscanner-pdf-scanner/id388627783" target="_blank">para iOS</a>.</p>
-            <p><strong>Llevar más de una copia impresa:</strong> Recuerda llevar varias copias impresas de los documentos para evitar inconvenientes en caso de que se necesiten correcciones o si te lo piden por algún motivo.</p>
-        </div>
-    </div>
-
-    <script>
-        const regionData = {
-            1: {direccion: "Moreno 267, Bahía Blanca", horario: "Lunes a viernes 9 a 12 hs."},
-            2: {direccion: "Echeverría 680, Pehuajó", horario: "Lunes a viernes 9 a 13 hs."},
-            3: {direccion: "Borges y 25 de Mayo, Junín", horario: "Martes a viernes 9 a 13 hs."},
-            4: {direccion: "Linares e Italia, Pergamino", horario: "Lunes a viernes 9 a 12 hs."},
-            5: {direccion: "Acassuso 715, San Isidro", horario: "Lunes a viernes 10 a 13 hs."},
-            6: {direccion: "Alen 435, Lomas de Zamora", horario: "Lunes a viernes 9 a 13 hs."},
-            7: {direccion: "Coronel Brandsen 3859, Ituzaingó", horario: "Martes a jueves 9 a 13 hs."},
-            8: {direccion: "Av. Independencia 1213, Mar del Plata", horario: "Lunes a viernes 10 a 13 hs."},
-            9: {direccion: "Arenales 675, Azul", horario: "Lunes a viernes 9 a 12 hs."},
-            10: {direccion: "Hijas de San José 145, Chivilcoy", horario: "Lunes a viernes 9:30 a 12:30 hs."},
-            11: {direccion: "Calle 129 1153, Ensenada", horario: "Lunes a viernes 9 a 13 hs."},
-            12: {direccion: "Hospital Paroissien, Isidro Casanova", horario: "Martes, jueves y viernes 9 a 13 hs."}
-        };
-
-        document.getElementById('region-select').addEventListener('change', function() {
-            const region = this.value;
-            const regionInfo = regionData[region];
-            document.getElementById('region-info').innerHTML = `
-                <p><strong>Dirección:</strong> ${regionInfo.direccion}</p>
-                <p><strong>Horario:</strong> ${regionInfo.horario}</p>
-            `;
-        });
-
-        function showImage(id) {
-            const img = document.getElementById(id);
-            img.style.display = img.style.display === 'none' ? 'block' : 'none';
-       
+    <script src="script.js"></script>
+</body>
+</html>
