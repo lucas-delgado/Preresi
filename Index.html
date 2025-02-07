@@ -4,55 +4,61 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guía de Inscripción Presencial</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Guía de Inscripción Presencial (3/2 - 14/2)</h1>
+    <div class="container">
+        <h1>Guía de Inscripción Presencial <span class="fecha">(3/2 - 14/2)</span></h1>
+        
+        <label for="region">Selecciona tu Región Sanitaria:</label>
+        <select id="region" onchange="mostrarDireccion()">
+            <option value="">-- Selecciona --</option>
+            <option value="1">Región 1 - Bahía Blanca</option>
+            <option value="2">Región 2 - Pehuajó</option>
+            <option value="3">Región 3 - Junín</option>
+            <option value="4">Región 4 - Pergamino</option>
+            <option value="5">Región 5 - San Isidro</option>
+            <option value="6">Región 6 - Lomas de Zamora</option>
+            <option value="7">Región 7 - Ituzaingó</option>
+            <option value="8">Región 8 - Mar del Plata</option>
+            <option value="9">Región 9 - Azul</option>
+            <option value="10">Región 10 - Chivilcoy</option>
+            <option value="11">Región 11 - Ensenada</option>
+            <option value="12">Región 12 - Isidro Casanova</option>
+        </select>
 
-    <label for="region">Selecciona tu Región Sanitaria:</label>
-    <select id="region" onchange="mostrarDireccion()">
-        <option value="">-- Selecciona --</option>
-        <option value="1">Región 1 - Bahía Blanca</option>
-        <option value="2">Región 2 - Pehuajó</option>
-        <option value="3">Región 3 - Junín</option>
-        <option value="4">Región 4 - Pergamino</option>
-        <option value="5">Región 5 - San Isidro</option>
-        <option value="6">Región 6 - Lomas de Zamora</option>
-        <option value="7">Región 7 - Ituzaingó</option>
-        <option value="8">Región 8 - Mar del Plata</option>
-        <option value="9">Región 9 - Azul</option>
-        <option value="10">Región 10 - Chivilcoy</option>
-        <option value="11">Región 11 - Ensenada</option>
-        <option value="12">Región 12 - Isidro Casanova</option>
-    </select>
+        <p id="direccion"></p>
 
-    <p id="direccion" class="hidden"><strong>Dirección:</strong> <span id="direccion-texto"></span></p>
-
-    <h2>Documentación Requerida</h2>
-    <ul>
-        <li>Constancia de preinscripción online <button class="toggle-btn" onclick="toggleInfo('preinscripcion')">+</button>
-            <p id="preinscripcion" class="hidden">Una vez completada la encuesta online, te tuvo que llegar un mail con el formulario completo. Hay que imprimir eso.</p>
-        </li>
-        <li>Declaración Jurada Becarios <button class="toggle-btn" onclick="toggleInfo('becarios')">+</button>
-            <p id="becarios" class="hidden">Título: Médico/a. Expedido por: UBA/UNLP/UNLAM. Matrícula N°: En trámite o ET. Descripción de tareas: Programa de formación Pre residencia...</p>
-        </li>
-        <li>Constancia de CUIL <button class="toggle-btn" onclick="toggleInfo('cuil')">+</button>
-            <p id="cuil" class="hidden">Lo pedís desde ANSES. <a href="https://www.argentina.gob.ar/servicio/solicitar-constancia-de-cuil" target="_blank">Solicitar Constancia de CUIL</a>.</p>
-        </li>
-        <li>Formulario de apertura de cuenta bancaria <button class="toggle-btn" onclick="toggleInfo('banco')">+</button>
-            <p id="banco" class="hidden">Dependencia: Ministerio de Salud de la Provincia de Buenos Aires. Busca tu sucursal <a href="https://www.bancoprovincia.com.ar/BuscadorSucursales" target="_blank">aquí</a>.</p>
-        </li>
-        <li>Currículum Vitae <button class="toggle-btn" onclick="toggleInfo('cv')">+</button>
-            <p id="cv" class="hidden">Pueden buscar plantillas en Canva. Sí o sí tienen que estar los datos que se especifican.</p>
-        </li>
-        <li>Certificado de libre deuda alimentaria <button class="toggle-btn" onclick="toggleInfo('deuda')">+</button>
-            <p id="deuda" class="hidden">Lo pedís desde <a href="https://www.gba.gob.ar/justicia_y_ddhh/deudores_alimentarios" target="_blank">aquí</a>.</p>
-        </li>
-        <li>Declaración jurada de procesos judiciales <button class="toggle-btn" onclick="toggleInfo('judiciales')">+</button>
-            <p id="judiciales" class="hidden">En la ciudad de... partido de... agregan la sede que fueron. Fecha: la de entrega.</p>
-        </li>
-    </ul>
-
+        <h2>Documentación requerida</h2>
+        <ul class="document-list">
+            <li>Constancia de preinscripción online <button class="toggle-btn" onclick="toggleInfo('preinscripcion')">+</button>
+                <p id="preinscripcion" class="hidden">Una vez completada la encuesta online, te debió llegar un mail con el formulario completo. Imprime ese documento.</p>
+            </li>
+            <li>Declaración Jurada Becarios/as <button class="toggle-btn" onclick="toggleInfo('becarios')">+</button>
+                <p id="becarios" class="hidden">Título: Médico/a. Expedido por: UBA/UNLP/UNLAM. Matrícula: En trámite o ET. Lugar real de práctica becaria: Dirección de Formación y Educación Permanente.</p>
+            </li>
+            <li>Fotocopia del Documento de Identidad (DNI, LE, LC).</li>
+            <li>Fotocopia del título profesional o certificado de título en trámite.</li>
+            <li>Certificado de ética profesional (original) en caso de poseer matrícula.</li>
+            <li>Constancia de CUIL/CUIT <button class="toggle-btn" onclick="toggleInfo('cuil')">+</button>
+                <p id="cuil" class="hidden">Solicítalo desde ANSES: <a href="https://www.argentina.gob.ar/servicio/solicitar-constancia-de-cuil" target="_blank">Haz clic aquí</a>.</p>
+            </li>
+            <li>Currículum Vitae <button class="toggle-btn" onclick="toggleInfo('cv')">+</button>
+                <p id="cv" class="hidden">Puedes buscar plantillas en Canva. Es importante que incluya todos los datos requeridos.</p>
+            </li>
+            <li>Formulario de apertura de cuenta bancaria <button class="toggle-btn" onclick="toggleInfo('banco')">+</button>
+                <p id="banco" class="hidden">Sucursal más cercana: <a href="https://www.bancoprovincia.com.ar/BuscadorSucursales" target="_blank">Haz clic aquí</a>. No cortar el papel. **Legajo no es necesario llenarlo**.</p>
+            </li>
+            <li>Declaración Jurada sobre procesos judiciales <button class="toggle-btn" onclick="toggleInfo('judiciales')">+</button>
+                <p id="judiciales" class="hidden">En la ciudad de [sede] partido de [localidad], fecha [día de entrega].</p>
+            </li>
+            <li>Certificado del Registro de Deudores Alimentarios Morosos <button class="toggle-btn" onclick="toggleInfo('deuda')">+</button>
+                <p id="deuda" class="hidden">Solicítalo aquí: <a href="https://www.gba.gob.ar/justicia_y_ddhh/deudores_alimentarios" target="_blank">Haz clic aquí</a>.</p>
+            </li>
+        </ul>
+    </div>
+    
     <script src="script.js"></script>
 </body>
 </html>
+
