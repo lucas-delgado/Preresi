@@ -1,0 +1,44 @@
+body {
+    font-family: Arial, sans-serif;
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+}
+
+h1, h2 {
+    color: #0056b3;
+}
+
+label {
+    font-weight: bold;
+}
+
+select {
+    width: 100%;
+    padding: 8px;
+    margin: 10px 0;
+}
+
+.hidden {
+    display: none;
+}
+
+.toggle-btn {
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.toggle-btn:hover {
+    background-color: #003d7a;
+}
+
+p {
+    background-color: #f1f1f1;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 5px;
+}
