@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function() {
         "3": "No se",
         "4": "No se",
         "5": "No se",
-        "6": "No se",
+        "6": "Si",
         "7": "No se",
         "8": "No se",
         "9": "No se",
