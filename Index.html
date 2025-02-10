@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guía de Inscripción Presencial</title>
+    <title>Guía de Inscripción Online</title>
     <link rel="stylesheet" href="styles.css">
     <script defer src="script.js"></script>
 </head>
 <body>
     <header>
-        <h1>Guía de Inscripción Presencial (3/2 - 14/2)</h1>
+        <h1>Guía de Inscripción Online</h1>
     </header>
 
     <section class="form-section">
@@ -31,36 +31,53 @@
         </select>
 
         <div id="direccion"></div>
+
+        <div class="opciones">
+            <p>Acepta digital:
+                <button class="btn-opcion" data-opcion="digital" data-valor="si">Sí</button>
+                <button class="btn-opcion" data-opcion="digital" data-valor="no">No</button>
+            </p>
+            <p>Acepta certificado VBA:
+                <button class="btn-opcion" data-opcion="vba" data-valor="si">Sí</button>
+                <button class="btn-opcion" data-opcion="vba" data-valor="no">No</button>
+            </p>
+        </div>
     </section>
 
     <section class="documentos">
         <h2>Documentación requerida</h2>
         <ul>
-            <li>Constancia de preinscripción online <button class="toggle-btn">+</button>
-                <p class="info">Una vez completada la encuesta online te tuvo que llegar un mail con el formulario completo, hay que imprimir eso.</p>
+            <li>Fotocopia DNI</li>
+            <li>Certificado de preinscripción online <button class="toggle-btn">+</button>
+                <p class="info">Imprimir el formulario enviado por mail.</p>
             </li>
-            <li>Declaración Jurada Becarios/as <button class="toggle-btn">+</button>
-                <p class="info">Título: médico/a; expedido por: UBA/UNLP/UNLAM; matrícula: en trámite o ET...</p>
-            </li>
-            <li>Fotocopia del Documento de Identidad</li>
-            <li>Fotocopia del título profesional o certificado en trámite</li>
-            <li>Certificado de ética profesional (si corresponde)</li>
-            <li>Constancia de CUIL/CUIT <button class="toggle-btn">+</button>
+            <li>Constancia de CUIL <button class="toggle-btn">+</button>
                 <p class="info"><a href="https://www.argentina.gob.ar/servicio/solicitar-constancia-de-cuil" target="_blank">Solicítala aquí</a></p>
             </li>
             <li>Currículum Vitae <button class="toggle-btn">+</button>
-                <p class="info">Pueden buscar plantillas en Canva, si o sí tienen que estar los datos que especifican.</p>
+                <p class="info">Debe incluir datos completos y formato profesional.</p>
             </li>
-            <li>Formulario de apertura de cuenta bancaria <button class="toggle-btn">+</button>
-                <p class="info">Dependencia: Ministerio de Salud de la Provincia de Buenos Aires... <br><strong>Aclaración:</strong> Legajo no es necesario llenarlo.</p>
+            <li>Declaración de becarios <button class="toggle-btn">+</button>
+                <p class="info">Información sobre becas y requisitos.</p>
             </li>
-            <li>Declaración Jurada de procesos judiciales <button class="toggle-btn">+</button>
-                <p class="info">En la ciudad de... partido de... agregan la sede que fueron...</p>
+            <li>Declaración judicial <button class="toggle-btn">+</button>
+                <p class="info">Detalles sobre antecedentes y procesos judiciales.</p>
             </li>
-            <li>Certificado del Registro de Deudores Alimentarios Morosos <button class="toggle-btn">+</button>
-                <p class="info"><a href="https://www.gba.gob.ar/justicia_y_ddhh/deudores_alimentarios" target="_blank">Solicítalo aquí</a></p>
+            <li>Declaración alimenticia <button class="toggle-btn">+</button>
+                <p class="info">Certificado del Registro de Deudores Alimentarios.</p>
+            </li>
+            <li>Apertura de cuenta bancaria <button class="toggle-btn">+</button>
+                <p class="info">Formulario del Ministerio de Salud.</p>
             </li>
         </ul>
     </section>
+
+    <section class="testimonios">
+        <h2>Testimonios sobre la región sanitaria</h2>
+        <div id="testimonios-container">
+            <p>Selecciona una región para ver testimonios.</p>
+        </div>
+    </section>
+
 </body>
 </html>
