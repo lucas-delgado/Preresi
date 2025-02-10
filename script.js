@@ -56,8 +56,8 @@ document.addEventListener("DOMContentLoaded", function() {
         
         if (regionValue) {
             infoAdicional.classList.remove("oculto");
-            textoDigital.innerText = digitalAcepta[regionValue] || "No se";
-            textoVba.innerText = vbaAcepta[regionValue] || "No se";
+            textoDigital.innerText = digitalAcepta[regionValue] || "";
+            textoVba.innerText = vbaAcepta[regionValue] || "";
         } else {
             infoAdicional.classList.add("oculto");
         }
