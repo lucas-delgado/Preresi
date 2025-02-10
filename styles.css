@@ -1,6 +1,6 @@
 body {
     font-family: 'Arial', sans-serif;
-    background: #f0f2f5;
+    background: linear-gradient(to right, #74ebd5, #acb6e5);
     color: #333;
     margin: 0;
     padding: 20px;
@@ -8,10 +8,10 @@ body {
 
 header {
     text-align: center;
-    background: #3498db;
-    color: white;
     padding: 20px;
+    background: rgba(255, 255, 255, 0.8);
     border-radius: 10px;
+    margin-bottom: 20px;
 }
 
 .form-section, .documentos, .testimonios {
@@ -22,7 +22,7 @@ header {
     max-width: 600px;
 }
 
-button.toggle-btn, .btn-opcion {
+button.toggle-btn {
     background: #3498db;
     color: white;
     border: none;
@@ -31,7 +31,7 @@ button.toggle-btn, .btn-opcion {
     border-radius: 5px;
 }
 
-button.toggle-btn:hover, .btn-opcion:hover {
+button.toggle-btn:hover {
     background: #2980b9;
 }
 
@@ -42,8 +42,11 @@ button.toggle-btn:hover, .btn-opcion:hover {
     margin-top: 10px;
 }
 
-.testimonios p {
-    background: #ecf0f1;
-    padding: 10px;
-    border-radius: 5px;
+a {
+    color: #e74c3c;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
 }
