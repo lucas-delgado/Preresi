@@ -106,6 +106,16 @@ button.toggle-btn {
     margin-left: 10px;
     border-radius: 5px;
 }
+.info {
+    display: none;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #555;
+}
+
+.info.visible {
+    display: block;
+}
 
 button.toggle-btn:hover {
     background: #2980b9;
