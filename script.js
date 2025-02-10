@@ -2,8 +2,8 @@ document.addEventListener("DOMContentLoaded", function() {
     const regionSelect = document.getElementById("region");
     const direccionDiv = document.getElementById("direccion");
     const infoAdicional = document.getElementById("info-adicional");
-    const infoDigital = document.getElementById("info-digital");
-    const infoVBA = document.getElementById("info-vba");
+    const textoDigital = document.getElementById("texto-digital");
+    const textoVba = document.getElementById("texto-vba");
 
     const direcciones = {
         "1": "Moreno 267, Bahía Blanca - Lunes a viernes de 9 a 12 hs.",
@@ -20,42 +20,68 @@ document.addEventListener("DOMContentLoaded", function() {
         "12": "Hospital Paroissien, Isidro Casanova - Martes, jueves y viernes de 9 a 13 hs."
     };
 
-    // Configuración inicial de valores para "Acepta digital" y "Acepta certificado"
-    const infoPorRegion = {
-        "1": { digital: "SÍ", vba: "NO" },
-        "2": { digital: "NO", vba: "SÍ" },
-        "3": { digital: "SÍ", vba: "SÍ" },
-        "4": { digital: "NO SE", vba: "NO SE" },
-        "5": { digital: "SÍ", vba: "NO" },
-        "6": { digital: "NO", vba: "SÍ" },
-        "7": { digital: "NO SE", vba: "NO SE" },
-        "8": { digital: "SÍ", vba: "SÍ" },
-        "9": { digital: "NO", vba: "SÍ" },
-        "10": { digital: "SÍ", vba: "NO" },
-        "11": { digital: "NO SE", vba: "NO SE" },
-        "12": { digital: "SÍ", vba: "SÍ" }
+    const digitalAcepta = {
+        "1": "No se",
+        "2": "No se",
+        "3": "No se",
+        "4": "No se",
+        "5": "No se",
+        "6": "No se",
+        "7": "No se",
+        "8": "No se",
+        "9": "No se",
+        "10": "No se",
+        "11": "No se",
+        "12": "No se"
     };
 
-    // Evento para actualizar la dirección y mostrar la información adicional
+    const vbaAcepta = {
+        "1": "No se",
+        "2": "No se",
+        "3": "No se",
+        "4": "No se",
+        "5": "No se",
+        "6": "No se",
+        "7": "No se",
+        "8": "No se",
+        "9": "No se",
+        "10": "No se",
+        "11": "No se",
+        "12": "No se"
+    };
+
     regionSelect.addEventListener("change", function() {
-        const region = this.value;
-        if (region) {
-            direccionDiv.innerText = "Dirección: " + direcciones[region];
-            infoDigital.innerText = infoPorRegion[region]?.digital || "NO SE";
-            infoVBA.innerText = infoPorRegion[region]?.vba || "NO SE";
+        const regionValue = this.value;
+        direccionDiv.innerText = "Dirección: " + (direcciones[regionValue] || "");
+        
+        if (regionValue) {
             infoAdicional.classList.remove("oculto");
+            textoDigital.innerText = digitalAcepta[regionValue] || "No se";
+            textoVba.innerText = vbaAcepta[regionValue] || "No se";
         } else {
-            direccionDiv.innerText = "";
             infoAdicional.classList.add("oculto");
         }
     });
 
-    // Evento para los botones de información adicional en los documentos
-    document.querySelectorAll(".toggle-btn").forEach(button => {
+    document.querySelectorAll(".btn-opcion").forEach(button => {
         button.addEventListener("click", function() {
-            const infoText = this.nextElementSibling;
-            infoText.classList.toggle("oculto");
+            const opcion = this.getAttribute("data-opcion");
+            const valor = this.getAttribute("data-valor");
+
+            if (opcion === "digital") {
+                textoDigital.innerText = valor;
+            } else if (opcion === "vba") {
+                textoVba.innerText = valor;
+            }
         });
     });
 
+    document.querySelectorAll(".toggle-btn").forEach(button => {
+        button.addEventListener("click", function() {
+            const info = this.parentElement.querySelector(".info");
+            if (info) {
+                info.classList.toggle("visible");
+            }
+        });
+    });
 });
