@@ -128,5 +128,15 @@ button.toggle-btn:hover {
     font-size: 14px;
     color: #555;
 }
+#testimonios {
+    width: 100%;
+    margin-top: auto;  /* Espacio entre 'información adicional' y 'testimonios' */
+    padding: 20px;
+    background-color: #f8f9fa; /* Color de fondo suave */
+    border-top: 2px solid #ccc; /* Línea separadora */
+    text-align: center;
+    position: relative;
+    bottom: 0;
+}
 
 /*
