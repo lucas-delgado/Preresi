@@ -73,7 +73,7 @@ document.addEventListener("DOMContentLoaded", function() {
             textoDigital.innerText = digitalAcepta[regionValue] || "No se";
             textoVba.innerText = vbaAcepta[regionValue] || "No se";
         } else {
-            infoAdicional.classList.add("oculto");
+            infoAdicional.classList.add("oculto")};
             
         const testimoniosDiv = document.getElementById("testimonios");
         const contenidoTestimonios = document.getElementById("contenidoTestimonios");
