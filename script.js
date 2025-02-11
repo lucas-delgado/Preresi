@@ -79,7 +79,7 @@ document.addEventListener("DOMContentLoaded", function() {
         } else {
             infoAdicional.classList.add("oculto");
             testimoniosDiv.classList.add("oculto");
-            contenidoTestimonios.innerText = "Seleccione una región sanitaria para ver testimonios";
+            contenidoTestimonios.innerText = "";
         }
     });
     
