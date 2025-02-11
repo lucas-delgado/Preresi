@@ -66,30 +66,23 @@ document.addEventListener("DOMContentLoaded", function() {
 
     regionSelect.addEventListener("change", function() {
         const regionValue = this.value;
+        const testimoniosDiv = document.getElementById("testimonios");
+        const contenidoTestimonios = document.getElementById("contenidoTestimonios");
         direccionDiv.innerText = "Dirección: " + (direcciones[regionValue] || "");
         
         if (regionValue) {
             infoAdicional.classList.remove("oculto");
             textoDigital.innerText = digitalAcepta[regionValue] || "No se";
             textoVba.innerText = vbaAcepta[regionValue] || "No se";
-        } else {
-            infoAdicional.classList.add("oculto");
-        }
-            
-        const testimoniosDiv = document.getElementById("testimonios");
-        const contenidoTestimonios = document.getElementById("contenidoTestimonios");
-
-// Mostrar testimonios según la región seleccionada
-        if (regionValue) {
             testimoniosDiv.classList.remove("oculto");
             contenidoTestimonios.innerText = testimonios[regionValue] || "Seleccione una región sanitaria para ver testimonios";
         } else {
+            infoAdicional.classList.add("oculto");
             testimoniosDiv.classList.add("oculto");
             contenidoTestimonios.innerText = "Seleccione una región sanitaria para ver testimonios";
-            }
         }
     });
-
+    
     document.querySelectorAll(".btn-opcion").forEach(button => {
         button.addEventListener("click", function() {
             const opcion = this.getAttribute("data-opcion");
