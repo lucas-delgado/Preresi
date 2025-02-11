@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function() {
         "8": "Av. Independencia 1213, Mar del Plata - Lunes a viernes de 10 a 13 hs.",
         "9": "Arenales 675, Azul - Lunes a viernes de 9 a 12 hs.",
         "10": "Hijas de San José 145, Chivilcoy - Lunes a viernes de 9:30 a 12:30 hs.",
-        "11": "Hospital El Cruce, Ensenada - Lunes a viernes de 9 a 13 hs.",
+        "11": "Hospital El Dique, Ensenada - Lunes a viernes de 9 a 13 hs.",
         "12": "Hospital Paroissien, Isidro Casanova - Martes, jueves y viernes de 9 a 13 hs."
     };
 
