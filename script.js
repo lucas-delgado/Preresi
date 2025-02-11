@@ -40,14 +40,14 @@ document.addEventListener("DOMContentLoaded", function() {
         "2": "No se",
         "3": "No se",
         "4": "No se",
-        "5": "No se",
+        "5": "Si",
         "6": "No se",
-        "7": "No se",
+        "7": "No la estuvieron aceptando. Ahora parece que SI.",
         "8": "No se",
         "9": "No se",
         "10": "No se",
         "11": "No se",
-        "12": "No se"
+        "12": "No la estuvieron aceptando. Ahora parece que SI."
     };
     const testimonios = {
     "1": "Testimonio de la región 1.",
@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", function() {
     "9": "Testimonio de la región 9.",
     "10": "Testimonio de la región 10.",
     "11": "Testimonio de la región 11.",
-    "12": "Testimonio de la región 12."
+    "12": "Una vez entregados los papeles te hacen escanearlos y mandarselos a un mail. Vayan con una app instalada si quieren agilizar, por ej Scan PDF."
 };
 
     regionSelect.addEventListener("change", function() {
