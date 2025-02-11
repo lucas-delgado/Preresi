@@ -2,8 +2,8 @@ document.addEventListener("DOMContentLoaded", function() {
     const regionSelect = document.getElementById("region");
     const direccionDiv = document.getElementById("direccion");
     const infoAdicional = document.getElementById("info-adicional");
-    const textoDigital = document.getElementById("texto-digital");
-    const textoVba = document.getElementById("texto-vba");
+    const textoDigital = document.getElementById("digitalAcepta");
+    const textoVba = document.getElementById("vbaAcepta");
 
     const direcciones = {
         "1": "Moreno 267, Bahía Blanca - Lunes a viernes de 9 a 12 hs.",
@@ -56,8 +56,8 @@ document.addEventListener("DOMContentLoaded", function() {
         
         if (regionValue) {
             infoAdicional.classList.remove("oculto");
-            textoDigital.innerText = digitalAcepta[regionValue] || "";
-            textoVba.innerText = vbaAcepta[regionValue] || "";
+            textoDigital.innerText = digitalAcepta[regionValue] || "No se";
+            textoVba.innerText = vbaAcepta[regionValue] || "No se";
         } else {
             infoAdicional.classList.add("oculto");
         }
