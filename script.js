@@ -49,6 +49,20 @@ document.addEventListener("DOMContentLoaded", function() {
         "11": "No se",
         "12": "No se"
     };
+    const testimonios = {
+    "1": "Testimonio de la región 1.",
+    "2": "Testimonio de la región 2.",
+    "3": "Testimonio de la región 3.",
+    "4": "Testimonio de la región 4.",
+    "5": "Testimonio de la región 5.",
+    "6": "Testimonio de la región 6.",
+    "7": "Testimonio de la región 7.",
+    "8": "Testimonio de la región 8.",
+    "9": "Testimonio de la región 9.",
+    "10": "Testimonio de la región 10.",
+    "11": "Testimonio de la región 11.",
+    "12": "Testimonio de la región 12."
+};
 
     regionSelect.addEventListener("change", function() {
         const regionValue = this.value;
@@ -60,6 +74,18 @@ document.addEventListener("DOMContentLoaded", function() {
             textoVba.innerText = vbaAcepta[regionValue] || "No se";
         } else {
             infoAdicional.classList.add("oculto");
+            
+        const testimoniosDiv = document.getElementById("testimonios");
+        const contenidoTestimonios = document.getElementById("contenidoTestimonios");
+
+// Mostrar testimonios según la región seleccionada
+        if (regionValue) {
+            testimoniosDiv.classList.remove("oculto");
+            contenidoTestimonios.innerText = testimonios[regionValue] || "Seleccione una región sanitaria para ver testimonios";
+        } else {
+            testimoniosDiv.classList.add("oculto");
+            contenidoTestimonios.innerText = "Seleccione una región sanitaria para ver testimonios";
+            }
         }
     });
 
