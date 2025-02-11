@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function() {
     "3": "Testimonio de la región 3.",
     "4": "Testimonio de la región 4.",
     "5": "Testimonio de la región 5.",
-    "6": "Testimonio de la región 6.",
+    "6": "No hay testimonios sobre la region 6.",
     "7": "Testimonio de la región 7.",
     "8": "Testimonio de la región 8.",
     "9": "Testimonio de la región 9.",
